@@ -1,4 +1,4 @@
--- I got this from https://wiki.haskell.org/The_Fibonacci_sequence
+-- I got most of the fib function from https://wiki.haskell.org/The_Fibonacci_sequence
 --
 -- The a+b is an accumulator argument which passes state to subsequent
 -- calls of the function so that you don't need to re-compute earlier
