@@ -1,7 +1,11 @@
 -- I got this from https://wiki.haskell.org/The_Fibonacci_sequence
+--
 -- The a+b is an accumulator argument which passes state to subsequent
 -- calls of the function so that you don't need to re-compute earlier
--- calls, drastically increasing performance
+-- calls, drastically increasing performance.
+--
+-- I stripped out the bang patterns as they made no noticable difference
+-- for this problem.
 fibonacci n = go n (0,1)
     where
         go n (a, b) | n == 0 = a
