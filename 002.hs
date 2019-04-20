@@ -9,8 +9,8 @@
 fibonacci n = go n (0,1)
     where
         go n (a, b) | n == 0 = a
-            | (a > 4000000) || (b > 4000000) = 0
-            | otherwise = go (n-1) (b, a+b)
+                    | (a > 4000000) || (b > 4000000) = 0
+                    | otherwise = go (n-1) (b, a+b)
 
 main :: IO ()
 main = do
