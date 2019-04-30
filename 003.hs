@@ -1,21 +1,20 @@
 isPrime :: Int -> Bool
-isPrime x
-    | x < 2 = False
-    | x == 2 = True
+isPrime inputNumber
+    | inputNumber < 2 = False
+    | inputNumber == 2 = True
     | otherwise =
-    let denominatorsList = [2..x-1]
-    in filter (==0) (map (x `rem`) denominatorsList) == []
+    let denominatorsList = [2..inputNumber-1]
+    in filter (==0) (map (inputNumber `rem`) denominatorsList) == []
 
 largestPrimeFactor :: Int -> Int
-largestPrimeFactor x = do
-    let checkForPrimality = [x,x-1..2]
-    let primesList = filter (isPrime ) checkForPrimality
-    head (filter (\n -> x `rem` n == 0) primesList)
+largestPrimeFactor inputNumber = do
+    -- note: will output the input number itself if it's prime!
+    let primesList = filter (isPrime) [inputNumber,inputNumber-1..2]
+    head (filter (\n -> inputNumber `rem` n == 0) primesList)
 
 main :: IO ()
 main = do
     putStrLn "enter a number to find highest prime factor: "
     input1 <- getLine
-    let numberUnderTest = read input1 :: Int
-    let result = largestPrimeFactor numberUnderTest 
+    let result = largestPrimeFactor (read input1 :: Int)
     print result
