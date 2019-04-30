@@ -4,6 +4,9 @@ isPrime inputNumber
     | inputNumber == 2 = True
     | otherwise =
     let denominatorsList = [2..inputNumber-1]
+    -- divide input by each denominator from 2 to N-1
+    -- then filter that list for any zeros (lack of remainders)
+    -- then return a bool of whether that filtered list is empty
     in filter (==0) (map (inputNumber `rem`) denominatorsList) == []
 
 largestPrimeFactor :: Int -> Int
