@@ -12,12 +12,10 @@ isPrime inputNumber
 largestPrimeFactor :: Int -> Int
 largestPrimeFactor inputNumber = do
     -- note: will output the input number itself if it's prime!
-    let primesList = filter (isPrime) [inputNumber,inputNumber-1..2]
-    head (filter (\n -> inputNumber `rem` n == 0) primesList)
+    head (filter (\n -> inputNumber `rem` n == 0 && isPrime n == True) [inputNumber,inputNumber-1..2])
 
 main :: IO ()
 main = do
-    putStrLn "enter a number to find highest prime factor: "
-    input1 <- getLine
-    let result = largestPrimeFactor (read input1 :: Int)
+    -- HINT: do :set +s in ghci to enable timing and memory usage
+    let result = largestPrimeFactor 50011
     print result
