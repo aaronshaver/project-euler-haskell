@@ -1,5 +1,6 @@
 isPrime :: Int -> Bool
 isPrime inputNumber
+    -- ignoring special cases of 2, 5 for this problem
     | elem (mod inputNumber 10) [2, 4, 5, 6, 8, 0] == True = False
     | otherwise =
     let denominatorsList = [2..inputNumber-1]
