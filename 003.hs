@@ -1,6 +1,6 @@
 -- I did my best to solve this on my own and did get a working but very slow solution.
 -- (e.g. finding largest prime factor of 18,000,001 was taking about 8.5 seconds)
--- After that, I was stumped look for hints and and translated this Python code to Haskell,
+-- After that, I was stumped and looked for hints and translated this Python code to Haskell,
 -- which was still a great learning opportunity! https://www.youtube.com/watch?v=Y3n-PA3QoAE
 
 getFactors :: Int -> [Int]
