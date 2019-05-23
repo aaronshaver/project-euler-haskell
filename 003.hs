@@ -17,7 +17,7 @@ isPrime :: Int -> Bool
 isPrime inputNumber =
     length (getFactors inputNumber) == 2 -- list is [1,the number itself]
 
-largestPrime :: [Int] -> Int
+largestPrime :: [Int] -> Int -- input list assumed to be mix of prime, non-prime numbers
 largestPrime numbers =
     last $ filter (isPrime) numbers
 
